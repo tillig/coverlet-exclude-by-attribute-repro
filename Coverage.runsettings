@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat Code Coverage">
+        <Configuration>
+          <Format>json,cobertura,lcov</Format>
+          <Exclude>[System.*]*</Exclude>
+          <ExcludeByFile>**/LoggerMessage.g.cs</ExcludeByFile>
+          <!-- .NET 9 doesn't seem to like ExcludeByAttribute with GeneratedCodeAttribute when combined with partial logger methods. -->
+          <!-- Remove the ExcludeByAttribute node OR remove the partial logger methods from SimpleMiddleware. -->
+          <ExcludeByAttribute>GeneratedCodeAttribute</ExcludeByAttribute>
+          <UseSourceLink>false</UseSourceLink>
+          <SkipAutoProps>true</SkipAutoProps>
+          <DeterministicReport>false</DeterministicReport>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>
