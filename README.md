@@ -1,5 +1,9 @@
 # Repro for coverlet ExcludeByAttribute + Generated Log Methods Issue
 
+Repro for [coverlet issue 1756](https://github.com/coverlet-coverage/coverlet/issues/1756).
+
+> :warning: **This issue is resolved.** It was fixed by adding `<PreserveCompilationContext>true</PreserveCompilationContext>` to the test project. By adding `--diag:buildlog.txt` to the `dotnet test` command, a note was logged that an assembly was missing and that stopped instrumentation from occurring. The log message indicated the fix. This wasn't present in .NET 8 or previous, so the fix wasn't obvious to me.
+
 Using...
 
 - `coverlet.collector` 6.0.4
